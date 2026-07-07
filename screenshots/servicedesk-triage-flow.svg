@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#5b6472" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="760" height="900" fill="#ffffff"/>
+  <text x="380" y="44" text-anchor="middle" font-size="24" font-weight="700" fill="#1a2230">How I Triage a Ticket</text>
+  <text x="380" y="70" text-anchor="middle" font-size="14" fill="#5b6472">A repeatable loop — isolate the cause before touching the fix</text>
+
+  <!-- Step 1 -->
+  <rect x="230" y="100" width="300" height="60" rx="10" fill="#e8f0fe" stroke="#3b6fd4" stroke-width="1.5"/>
+  <text x="380" y="126" text-anchor="middle" font-size="15" font-weight="600" fill="#1a2230">1. Read the full ticket</text>
+  <text x="380" y="146" text-anchor="middle" font-size="12.5" fill="#5b6472">Scope + symptom before doing anything</text>
+  <line x1="380" y1="160" x2="380" y2="188" stroke="#5b6472" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- Step 2 -->
+  <rect x="230" y="190" width="300" height="60" rx="10" fill="#e8f0fe" stroke="#3b6fd4" stroke-width="1.5"/>
+  <text x="380" y="216" text-anchor="middle" font-size="15" font-weight="600" fill="#1a2230">2. Isolate</text>
+  <text x="380" y="236" text-anchor="middle" font-size="12.5" fill="#5b6472">What still works? Form a hypothesis</text>
+  <line x1="380" y1="250" x2="380" y2="278" stroke="#5b6472" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- Decision: account action? -->
+  <polygon points="380,280 545,340 380,400 215,340" fill="#fff4e0" stroke="#e0912f" stroke-width="1.5"/>
+  <text x="380" y="332" text-anchor="middle" font-size="14" font-weight="600" fill="#1a2230">Account or security</text>
+  <text x="380" y="352" text-anchor="middle" font-size="14" font-weight="600" fill="#1a2230">action involved?</text>
+
+  <!-- YES branch to verify -->
+  <line x1="545" y1="340" x2="628" y2="340" stroke="#5b6472" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="588" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b">YES</text>
+  <rect x="628" y="310" width="120" height="60" rx="10" fill="#fde8e8" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="688" y="334" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2230">Verify identity</text>
+  <text x="688" y="352" text-anchor="middle" font-size="11.5" fill="#5b6472">FIRST — mandatory</text>
+  <path d="M688 310 Q688 285 545 300" fill="none" stroke="#5b6472" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <!-- NO branch down -->
+  <text x="360" y="420" text-anchor="middle" font-size="12" font-weight="700" fill="#2e7d32">NO / once verified</text>
+  <line x1="380" y1="400" x2="380" y2="438" stroke="#5b6472" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- Step 3 -->
+  <rect x="230" y="440" width="300" height="60" rx="10" fill="#e8f0fe" stroke="#3b6fd4" stroke-width="1.5"/>
+  <text x="380" y="466" text-anchor="middle" font-size="15" font-weight="600" fill="#1a2230">3. Change ONE variable</text>
+  <text x="380" y="486" text-anchor="middle" font-size="12.5" fill="#5b6472">Then test — don't stack changes</text>
+  <line x1="380" y1="500" x2="380" y2="528" stroke="#5b6472" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- Decision: fixed? -->
+  <polygon points="380,530 525,585 380,640 235,585" fill="#fff4e0" stroke="#e0912f" stroke-width="1.5"/>
+  <text x="380" y="590" text-anchor="middle" font-size="14" font-weight="600" fill="#1a2230">Fixed?</text>
+
+  <!-- NO loops back -->
+  <text x="560" y="555" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b">NO</text>
+  <path d="M525 585 Q610 585 610 470 Q610 400 545 400" fill="none" stroke="#5b6472" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <text x="628" y="490" text-anchor="middle" font-size="11" fill="#5b6472">back to</text>
+  <text x="628" y="505" text-anchor="middle" font-size="11" fill="#5b6472">isolate</text>
+
+  <!-- YES down -->
+  <text x="360" y="660" text-anchor="middle" font-size="12" font-weight="700" fill="#2e7d32">YES</text>
+  <line x1="380" y1="640" x2="380" y2="668" stroke="#5b6472" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- Step 4 confirm -->
+  <rect x="230" y="670" width="300" height="60" rx="10" fill="#e8f0fe" stroke="#3b6fd4" stroke-width="1.5"/>
+  <text x="380" y="696" text-anchor="middle" font-size="15" font-weight="600" fill="#1a2230">4. Confirm with the user</text>
+  <text x="380" y="716" text-anchor="middle" font-size="12.5" fill="#5b6472">"Working now?" — not just "looks fixed"</text>
+  <line x1="380" y1="730" x2="380" y2="758" stroke="#5b6472" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- Step 5 document -->
+  <rect x="200" y="760" width="360" height="72" rx="10" fill="#e6f4ea" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="380" y="786" text-anchor="middle" font-size="15" font-weight="600" fill="#1a2230">5. Document</text>
+  <text x="380" y="806" text-anchor="middle" font-size="12" fill="#5b6472">diagnosis → reason → action → verify → status</text>
+  <text x="380" y="823" text-anchor="middle" font-size="12" fill="#5b6472">+ 1 plain-language user note · never record passwords</text>
+
+  <!-- footer keystone -->
+  <text x="380" y="868" text-anchor="middle" font-size="13" font-style="italic" fill="#8a5a00">"It works now" is not the same as "I found why."</text>
+</svg>
