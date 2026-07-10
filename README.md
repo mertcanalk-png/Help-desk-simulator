@@ -41,7 +41,7 @@ A recurring lesson across these tickets: **"it works now" is not the same as
 | 05 | Email / Identity | Email won't set up on new phone AND fails on workstation | Password issue (not "account disabled" — a distinct state) | Ran the runbook isolation step, verified identity, reset password with force-change | Isolate scope first (does it fail on other devices too?); match note wording to the actual account state |
 | 06 | Network / Access | Remote user's VPN won't reconnect | Unconfirmed — flushdns + reboot restored it | Ran `ipconfig /flushdns` and rebooted | `flushdns` clears the DNS resolver cache (not IPs, not a "VPN cache"); change one variable at a time so the cause is provable |
 | 07 | Infrastructure / Print Services | All printers, every floor, offline at once (worked the previous evening) | Print services not running on the print server (server-down vs spooler-hung not separately confirmed) | Isolated to the print server, rebooted it, confirmed active, user verified printing restored | Simultaneous multi-site failure = shared dependency, not the endpoints; check whole-server-vs-spooler before rebooting |
-
+| 08 | Identity / Access | New hire access setup — create account + provision group membership | N/A — service request (no fault) | Verified correct target account, created user in Engineering OU with force-password-change, added the 3 requested groups, confirmed account enabled + memberships present | Verify by unique account when names collide; provisioning is a request (fulfilment), not an incident (root cause) |
 ---
 
 ## The documentation loop
