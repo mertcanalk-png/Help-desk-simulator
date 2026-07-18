@@ -1,4 +1,4 @@
-# Service Desk — Ticket Practice Log
+# Help Desk — Ticket Practice Log
 
 A running log of help desk tickets I've worked through in a service desk
 simulator, documented the way a real Level 1 technician documents a ticket:
